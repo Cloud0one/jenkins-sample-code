@@ -17,7 +17,7 @@ pipeline {
         }
         stage('Push Image') {
             steps {
-               sh 'sudo gcloud auth configure-docker \ us-central1-docker.pkg.dev'
+               sh 'sudo gcloud auth configure-docker\us-central1-docker.pkg.dev'
                sh 'sudo docker images'
                sh 'sudo docker push us-central1-docker.pkg.dev/burner-sarnaik/sarvesh-jenkins:$tag'
             }

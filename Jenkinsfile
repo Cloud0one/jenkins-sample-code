@@ -4,7 +4,9 @@ pipeline {
         tag = sh(returnStdout: true, script: "git rev-parse --short HEAD")
     }
 
+        
     stages {
+        
        stage("Generating OIDC token and saving it to a file") {
             steps {
                 script {
@@ -26,8 +28,6 @@ pipeline {
                         }
                 }
         }
-    }    
-    stages {
         stage('Connect gke') {
             steps {
                 sh 'gcloud container clusters get-credentials sarvesh --zone us-central1-c --project burner-sarnaik'
